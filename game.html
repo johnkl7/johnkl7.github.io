@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 	<title>John's Proyect</title>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
+	<link rel="icon" id="logo" type="image/x-icon" href="logo.png">
 	<link rel="stylesheet" href="style.css" />
 <script>
 
@@ -60,6 +60,36 @@ function cambia () {
 	document.getElementById("buton_color").style.color = "orange";
 }
 
+fetch("enbuscapaco.json").then(function(response){
+	return response.json();
+}).then(function(data){
+	console.log(data.name);
+});
+
+function carga_datos (id_character) {
+	fetch("character"+id_character+".json").then(function(response){
+		return response.json();
+	}).then(function(data){
+		let lista = "<ul>";
+		lista += "<li>Nombre: "+data.name+"</li>";
+		lista += "<li>Nick: "+data.nick2+"</li>";
+		lista += "<li>Age: "+data.age+"</li>";
+		lista += "<li>Race: "+data.race+"</li>";
+		lista += "<li>Class: "+data.class+"</li>";
+		lista += "<li>Gender: "+data.gender+"</li>";
+		lista += "<li>Height: "+data.height+"</li>";
+		lista += "<li>Weight: "+data.weight+"</li>";
+		lista += "<li>Language: "+data.language+"</li>";
+		lista += "<li>Country: "+data.country+"</li>";
+		lista += "<li>Description: "+data.description+"</li>";
+		lista += "</ul>";
+		console.log(lista);
+		document.getElementById("character_data").innerHTML = lista;
+	});	
+}
+
+
+
 </script>
 </head>
 <body id="game-page" >
@@ -84,8 +114,22 @@ function cambia () {
 			<p><input type="button" id="buton_color" value="¡CAMBIA DE COLOR!" onClick="cambia();"/></p>
 			<h2>CONTADOR</h2>
 			<p id="contador">0</p>
-			<p><input type="button" id="inicia_contador" onClick="start_contador();" value="Inicia el contador" /></p>
-		</form>
+			<p><input type="button" id="inicia_contador" onClick="start_contador();" value="Inicia el contador" /></p>		
+	 </form>
+
+	 <form id="characters">
+	 <ul id="character_list">
+	 
+		<li><button type="button" id="character1" onClick="carga_datos(1);">Eustaquio</button></li>
+		<li><button type="button" id="character2" onClick="carga_datos(2);">Mariana</button></li>
+		<li><button type="button" id="character3" onClick="carga_datos(3);">Mortadelo</button></li>
+		<li><button type="button" id="character4" onClick="carga_datos(4);">Messi</button></li>
+	 </ul>
+	 <section id="character_data">
+	 
+	
+	 </section>
+	 </form>
 	</main>
 	<footer>
 		<p>John Largao (c) 2023</p>

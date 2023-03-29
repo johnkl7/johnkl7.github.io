@@ -1,0 +1,14 @@
+{
+"id_character":1,
+"name":"Eustaquio",
+"nick2":"Eusta",
+"age":30,
+"race":"Enano",
+"class":"Artificiero",
+"gender":"N",
+"height":1.3,
+"weight":80,
+"language":"PRT",
+"country":"BR",
+"description":"Enano procedente de la selva amazonica"
+}
