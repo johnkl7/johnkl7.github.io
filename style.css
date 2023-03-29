@@ -9,10 +9,15 @@ padding:0 0 0 128px;
 background-image:url(logo.png);
 background-repeat:no-repeat;
 background-size:128px;
+
 }
 
 #game-page header {
+background-color:red;
 
+animation-name:cabecera;
+animation-duration:2s;
+animation-iteration-count: 2;
 }
 
 
@@ -47,10 +52,21 @@ background-color:orange;
 transform: scale(1.1);
 opacity: 0.9;
 font-weight: bold;
+animation-name:botones;
+animation-duration:2s;
+animation-iteration-count:2;
+animation-direction:alternate;
 }
 
+@keyframes cabecera {
+from {background-color:red;}
+to {background-color:yellow;}
+}
 
+@keyframes botones {
+from {background-color:orange;}
+to {background-color:red;}
 
-
+}
 
 

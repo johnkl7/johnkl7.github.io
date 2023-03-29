@@ -67,7 +67,7 @@ fetch("enbuscapaco.json").then(function(response){
 });
 
 function carga_datos (id_character) {
-	fetch("character"+id_character+".json").then(function(response){
+	fetch("https://johnkl7.github.io/character"+id_character+".json").then(function(response){
 		return response.json();
 	}).then(function(data){
 		let lista = "<ul>";
